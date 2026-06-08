@@ -1,0 +1,17 @@
+# IDE / editor metadata
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit local secrets (theme config IS tracked)
+.streamlit/secrets.toml
