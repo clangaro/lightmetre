@@ -120,7 +120,7 @@ def plot_with_shaded_regions(df: pd.DataFrame, sensor_col: str, date_str: str):
 # -----------------------------
 # STREAMLIT UI
 # -----------------------------
-st.title("💡 Light Sensor Monitoring with Phase Detection")
+st.title("Light Sensor Monitoring with Phase Detection")
 
 # Check directory exists
 if not os.path.isdir(DATA_DIR):
@@ -137,7 +137,7 @@ for f in all_files:
         continue
     files_by_date.setdefault(d, []).append(f)
 
-available_dates = sorted(files_by_date.keys())
+available_dates = sorted(files_by_date.keys(), reverse=True)
 
 if not available_dates:
     st.warning("No CSV files with a YYYY-MM-DD date in the filename were found.")
@@ -169,7 +169,7 @@ if not sensor_cols:
     st.dataframe(df.head(10))
     st.stop()
 
-st.subheader("📊 Sensor Plots with Treatment & Background Shading")
+st.subheader("Sensor Plots with Treatment & Background Shading")
 st.write("Detected sensor columns:", sensor_cols)
 
 for sensor_col in sensor_cols:
